@@ -1,0 +1,6 @@
+{
+  "name": "Arsip Digital Anggota IPNU",
+  "description": "Sistem informasi database, pendaftaran mandiri, dan arsip digital kader Ikatan Pelajar Nahdlatul Ulama berbasis web modern dan mobile-first.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
