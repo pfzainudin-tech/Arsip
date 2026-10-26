@@ -6,6 +6,77 @@ export interface SheetSyncResult {
   spreadsheetId: string;
   spreadsheetUrl: string;
   rowCount: number;
+  syncedAt: string;
+}
+
+export const LAST_SHEETS_SYNC_KEY = 'ipnu_last_sheets_sync';
+
+export const getLastSheetsBackup = (): SheetSyncResult | null => {
+  try {
+    const raw = localStorage.getItem(LAST_SHEETS_SYNC_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch (e) {
+    console.error('Error reading last sheets backup:', e);
+    return null;
+  }
+};
+
+export const saveLastSheetsBackup = (result: SheetSyncResult) => {
+  try {
+    localStorage.setItem(LAST_SHEETS_SYNC_KEY, JSON.stringify(result));
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('ipnu_sheets_backup_updated', { detail: result }));
+    }
+  } catch (e) {
+    console.error('Error saving last sheets backup:', e);
+  }
+};
+
+export function getBackupStatus(lastBackup: SheetSyncResult | null): {
+  isOverdue: boolean;
+  daysAgo: number | null;
+  formattedDate: string;
+  relativeText: string;
+} {
+  if (!lastBackup || !lastBackup.syncedAt) {
+    return {
+      isOverdue: true,
+      daysAgo: null,
+      formattedDate: 'Belum pernah',
+      relativeText: 'Belum pernah dicadangkan'
+    };
+  }
+
+  const syncDate = new Date(lastBackup.syncedAt);
+  const now = new Date();
+  const diffMs = now.getTime() - syncDate.getTime();
+  const daysAgo = Math.max(0, Math.floor(diffMs / (1000 * 60 * 60 * 24)));
+  const isOverdue = daysAgo >= 7;
+
+  let relativeText = '';
+  if (daysAgo === 0) {
+    relativeText = 'Hari ini';
+  } else if (daysAgo === 1) {
+    relativeText = '1 hari yang lalu';
+  } else {
+    relativeText = `${daysAgo} hari yang lalu`;
+  }
+
+  const formattedDate = syncDate.toLocaleDateString('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+
+  return {
+    isOverdue,
+    daysAgo,
+    formattedDate,
+    relativeText
+  };
 }
 
 export const syncMembersToGoogleSheet = async (
@@ -193,9 +264,14 @@ export const syncMembersToGoogleSheet = async (
     console.warn('Header styling skipped:', formatErr);
   }
 
-  return {
+  const syncResult: SheetSyncResult = {
     spreadsheetId,
     spreadsheetUrl,
-    rowCount: members.length
+    rowCount: members.length,
+    syncedAt: new Date().toISOString()
   };
+
+  saveLastSheetsBackup(syncResult);
+
+  return syncResult;
 };

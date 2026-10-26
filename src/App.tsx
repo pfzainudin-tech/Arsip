@@ -161,11 +161,11 @@ export default function App() {
                 <div className="max-w-2xl space-y-3">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-700/80 text-amber-300 font-bold text-xs border border-amber-400/30 shadow-xs">
                     <Star className="w-3.5 h-3.5 fill-amber-300 text-amber-300" />
-                    <span>Sistem Arsip & Portal Anggota Mandiri</span>
+                    <span className="font-trajan uppercase tracking-wider">SISTEM ARSIP & PORTAL ANGGOTA MANDIRI</span>
                   </div>
 
-                  <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight">
-                    Arsip Digital & Pendaftaran Anggota IPNU
+                  <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight font-trajan uppercase">
+                    ARSIP DIGITAL & PENDAFTARAN ANGGOTA IPNU
                   </h1>
 
                   <p className="text-emerald-100 text-xs sm:text-sm leading-relaxed">
@@ -189,7 +189,7 @@ export default function App() {
                 </div>
 
                 {/* Hero Badge Logo Frame (Clean display, no admin triggers) */}
-                <div className="hidden md:flex flex-col items-center justify-center p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/20 shrink-0">
+                <div className="hidden md:flex flex-col items-start justify-center p-3.5 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/20 shrink-0 text-left">
                   <div className="w-24 h-24 rounded-2xl bg-white p-2 shadow-lg flex items-center justify-center overflow-hidden border-2 border-amber-400">
                     <img
                       src={orgSettings.logoUrl}
@@ -197,8 +197,8 @@ export default function App() {
                       className="max-w-full max-h-full object-contain"
                     />
                   </div>
-                  <span className="text-[10px] text-amber-300 font-semibold mt-2">
-                    IPNU Mandiri
+                  <span className="text-[11px] text-amber-300 font-bold mt-2 uppercase font-trajan tracking-wider text-left">
+                    IPNU MANDIRI
                   </span>
                 </div>
 

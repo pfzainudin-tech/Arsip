@@ -205,6 +205,7 @@ export const createAnggota = async (
     email: formData.email.trim().toLowerCase(),
     jabatan: derivedJabatan,
     asal_kepengurusan: derivedAsal,
+    tingkat_kepengurusan: formData.tingkat_kepengurusan || undefined,
     pas_foto_url: finalFotoUrl,
     foto_ktp_url: formData.foto_ktp_preview || '',
     tanda_tangan_url: finalTtdUrl,

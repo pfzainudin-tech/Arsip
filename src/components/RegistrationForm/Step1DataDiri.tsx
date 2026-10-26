@@ -459,8 +459,39 @@ export const Step1DataDiri: React.FC<Step1Props> = ({
 
             <div>
               <label className="block text-xs font-semibold text-slate-700 mb-1">
-                Asal Kepengurusan
+                Tingkat Kepengurusan & Asal Instansi
               </label>
+              <div className="flex flex-wrap gap-1 mb-1.5">
+                {[
+                  { code: 'PAC', label: 'PAC (Kecamatan)' },
+                  { code: 'PR', label: 'PR (Ranting/Desa)' },
+                  { code: 'PK', label: 'PK (Sekolah/Pesantren)' },
+                  { code: 'PKPT', label: 'PKPT (Kampus)' },
+                  { code: 'PC', label: 'PC (Cabang/Kab)' },
+                  { code: 'PW', label: 'PW (Wilayah/Jatim)' },
+                  { code: 'PP', label: 'PP (Pusat)' },
+                ].map((tier) => (
+                  <button
+                    key={tier.code}
+                    type="button"
+                    onClick={() => {
+                      updateFormData({ 
+                        tingkat_kepengurusan: tier.code,
+                        asal_kepengurusan: formData.asal_kepengurusan && !formData.asal_kepengurusan.startsWith('PAC.') && !formData.asal_kepengurusan.startsWith('PR.') && !formData.asal_kepengurusan.startsWith('PK.')
+                          ? formData.asal_kepengurusan 
+                          : `${tier.code}. IPNU `
+                      });
+                    }}
+                    className={`text-[10px] px-2 py-0.5 rounded-lg border font-semibold transition-colors ${
+                      formData.tingkat_kepengurusan === tier.code
+                        ? 'bg-emerald-800 text-white border-emerald-800 shadow-xs'
+                        : 'bg-white text-slate-600 border-slate-200 hover:bg-emerald-50 hover:text-emerald-800'
+                    }`}
+                  >
+                    {tier.label}
+                  </button>
+                ))}
+              </div>
               <input
                 type="text"
                 value={formData.asal_kepengurusan || ''}

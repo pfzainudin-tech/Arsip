@@ -1,9 +1,27 @@
 @import "tailwindcss";
 
 @layer base {
+  @font-face {
+    font-family: 'Trajan Pro';
+    src: local('Trajan Pro'), local('TrajanPro-Regular'), local('Cinzel'), url('https://fonts.gstatic.com/s/cinzel/v23/8vIQ7w0m2Nqy-zVxGOmH.woff2') format('woff2');
+    font-weight: 400 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Trajan Pro';
+    src: local('Trajan Pro Bold'), local('TrajanPro-Bold'), local('Cinzel-Bold'), url('https://fonts.gstatic.com/s/cinzel/v23/8vIK7w0m2Nqy-zV-5OhGbKVN.woff2') format('woff2');
+    font-weight: 700 900;
+    font-style: normal;
+  }
+
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
+}
+
+.font-trajan {
+  font-family: 'Trajan Pro', 'Cinzel', serif !important;
+  letter-spacing: 0.04em;
 }
 
 @media print {

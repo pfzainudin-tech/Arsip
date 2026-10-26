@@ -33,6 +33,7 @@ export interface Anggota {
   email: string;
   jabatan?: string; // e.g. KETUA, SEKRETARIS, WAKIL KETUA, ANGGOTA
   asal_kepengurusan?: string; // e.g. PAC. IPNU KECAMATAN PACET
+  tingkat_kepengurusan?: string; // e.g. PP, PW, PC, PAC, PR, PK, PKPT, PAR
   pas_foto_url: string;
   foto_ktp_url?: string;
   tanda_tangan_url: string;
@@ -90,6 +91,7 @@ export interface RegistrationFormData {
   email: string;
   jabatan?: string;
   asal_kepengurusan?: string;
+  tingkat_kepengurusan?: string;
 
   // Step 2: Riwayat Pendidikan
   pendidikan_list: RiwayatPendidikan[];

@@ -15,6 +15,7 @@ export const INITIAL_MOCK_MEMBERS: AnggotaFull[] = [
     tanda_tangan_url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120"><path d="M 30 70 Q 70 20 110 60 T 170 65 Q 210 20 250 80" stroke="%23166534" stroke-width="3" fill="none"/></svg>',
     password_akses: 'IPNU-195401',
     jabatan: 'KETUA',
+    tingkat_kepengurusan: 'PAC',
     asal_kepengurusan: 'PAC. IPNU KECAMATAN PACET',
     status_verifikasi: 'Terverifikasi',
     catatan_verifikasi: 'Dokumen lengkap dan telah diverifikasi oleh PAC IPNU.',
@@ -95,7 +96,8 @@ export const INITIAL_MOCK_MEMBERS: AnggotaFull[] = [
     tanda_tangan_url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120"><path d="M 40 80 Q 90 10 130 50 T 200 40 Q 240 70 270 50" stroke="%23166534" stroke-width="3" fill="none"/></svg>',
     password_akses: 'IPNU-195402',
     jabatan: 'SEKRETARIS',
-    asal_kepengurusan: 'PAC. IPNU KECAMATAN PACET',
+    tingkat_kepengurusan: 'PR',
+    asal_kepengurusan: 'PR. IPNU DESA SUKOREJO',
     status_verifikasi: 'Menunggu Verifikasi',
     catatan_verifikasi: '',
     created_at: '2026-10-18T14:20:00Z',
@@ -151,7 +153,8 @@ export const INITIAL_MOCK_MEMBERS: AnggotaFull[] = [
     tanda_tangan_url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120"><path d="M 25 60 C 60 10, 80 90, 140 40 S 210 90, 260 40" stroke="%23166534" stroke-width="3" fill="none"/></svg>',
     password_akses: 'IPNU-195403',
     jabatan: 'WAKIL KETUA',
-    asal_kepengurusan: 'PAC. IPNU KECAMATAN PACET',
+    tingkat_kepengurusan: 'PKPT',
+    asal_kepengurusan: 'PKPT IPNU UIN SUNAN AMPEL',
     status_verifikasi: 'Terverifikasi',
     catatan_verifikasi: 'Instruktur aktif di PC IPNU Surabaya.',
     created_at: '2026-10-10T09:12:00Z',
@@ -230,7 +233,8 @@ export const INITIAL_MOCK_MEMBERS: AnggotaFull[] = [
     tanda_tangan_url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120"><path d="M 50 60 Q 90 20 130 70 T 210 50" stroke="%23166534" stroke-width="3" fill="none"/></svg>',
     password_akses: 'IPNU-195404',
     jabatan: 'ANGGOTA',
-    asal_kepengurusan: 'PAC. IPNU KECAMATAN PACET',
+    tingkat_kepengurusan: 'PK',
+    asal_kepengurusan: 'PK IPNU SMK NEGERI 1 SIDOARJO',
     status_verifikasi: 'Ditolak',
     catatan_verifikasi: 'Pas foto tidak sesuai ketentuan (bukan formal 3x4) dan sertifikat MAKESTA belum dilampirkan.',
     created_at: '2026-10-17T11:45:00Z',
@@ -261,6 +265,119 @@ export const INITIAL_MOCK_MEMBERS: AnggotaFull[] = [
         penyelenggara: 'PAC IPNU Sidoarjo',
         lokasi: 'SMK Antartika Sidoarjo',
         tahun: '2022'
+      }
+    ]
+  },
+  {
+    id: 'e5f6a7b8-c9d0-41e2-f345-556677889900',
+    nama_lengkap: 'M. SYAFIQ AL-FATIH',
+    alamat_lengkap: 'Jl. Majapahit No. 88, Kec. Kranggan, Kota Mojokerto, Jawa Timur',
+    tempat_lahir: 'Mojokerto',
+    tanggal_lahir: '2004-02-14',
+    nik: '3576011402040001',
+    no_hp_wa: '081299887766',
+    email: 'syafiq.alfatih@ipnu.id',
+    pas_foto_url: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop&q=80',
+    foto_ktp_url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=80',
+    tanda_tangan_url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120"><path d="M 40 70 Q 80 15 120 60 T 190 40 Q 230 65 260 45" stroke="%23166534" stroke-width="3" fill="none"/></svg>',
+    password_akses: 'IPNU-195405',
+    jabatan: 'WAKIL SEKRETARIS',
+    tingkat_kepengurusan: 'PC',
+    asal_kepengurusan: 'PC. IPNU KABUPATEN MOJOKERTO',
+    status_verifikasi: 'Terverifikasi',
+    catatan_verifikasi: 'Berkas lengkap dan rekomendasi PC IPNU sah.',
+    created_at: '2026-10-14T10:00:00Z',
+    updated_at: '2026-10-15T12:00:00Z',
+    riwayat_pendidikan: [
+      {
+        id: 'p8',
+        jenjang: 'SMA',
+        nama_sekolah: 'MAN 1 Mojokerto',
+        tahun_masuk: '2019',
+        tahun_lulus: '2022'
+      },
+      {
+        id: 'p9',
+        jenjang: 'S1',
+        nama_sekolah: 'Universitas Islam Majapahit',
+        tahun_masuk: '2022',
+        tahun_lulus: '2026'
+      }
+    ],
+    riwayat_organisasi: [
+      {
+        id: 'o6',
+        nama_organisasi: 'PC IPNU Kabupaten Mojokerto',
+        jabatan: 'Wakil Sekretaris',
+        tahun_mulai: '2024',
+        tahun_selesai: '2026'
+      }
+    ],
+    riwayat_kaderisasi: [
+      {
+        id: 'k10',
+        kategori: 'Formal',
+        jenjang_formal: 'MAKESTA',
+        penyelenggara: 'PAC IPNU Mojosari',
+        lokasi: 'Mojokerto',
+        tahun: '2020'
+      },
+      {
+        id: 'k11',
+        kategori: 'Formal',
+        jenjang_formal: 'LAKMUD',
+        penyelenggara: 'PC IPNU Kab Mojokerto',
+        lokasi: 'Pacet Mojokerto',
+        tahun: '2022'
+      }
+    ]
+  },
+  {
+    id: 'f6a7b8c9-d0e1-42f3-a456-667788990011',
+    nama_lengkap: 'AHMAD ZAINUDDIN',
+    alamat_lengkap: 'Dusun Pacet Selatan RT 01/RW 02, Desa Pacet, Kec. Pacet, Kab. Mojokerto',
+    tempat_lahir: 'Mojokerto',
+    tanggal_lahir: '2005-08-17',
+    nik: '3516081708050004',
+    no_hp_wa: '085877889900',
+    email: 'zainuddin.pacet@gmail.com',
+    pas_foto_url: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80',
+    foto_ktp_url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=80',
+    tanda_tangan_url: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120"><path d="M 35 65 Q 75 25 115 55 T 180 50 Q 220 70 255 45" stroke="%23166534" stroke-width="3" fill="none"/></svg>',
+    password_akses: 'IPNU-195406',
+    jabatan: 'BENDAHARA',
+    tingkat_kepengurusan: 'PR',
+    asal_kepengurusan: 'PR. IPNU DESA PACET',
+    status_verifikasi: 'Terverifikasi',
+    catatan_verifikasi: 'Pengurus Ranting aktif.',
+    created_at: '2026-10-19T09:15:00Z',
+    updated_at: '2026-10-19T14:20:00Z',
+    riwayat_pendidikan: [
+      {
+        id: 'p10',
+        jenjang: 'SMA',
+        nama_sekolah: 'SMK Negeri 1 Dlanggu',
+        tahun_masuk: '2020',
+        tahun_lulus: '2023'
+      }
+    ],
+    riwayat_organisasi: [
+      {
+        id: 'o7',
+        nama_organisasi: 'PR IPNU Desa Pacet',
+        jabatan: 'Bendahara',
+        tahun_mulai: '2023',
+        tahun_selesai: '2025'
+      }
+    ],
+    riwayat_kaderisasi: [
+      {
+        id: 'k12',
+        kategori: 'Formal',
+        jenjang_formal: 'MAKESTA',
+        penyelenggara: 'PR IPNU Desa Pacet',
+        lokasi: 'Balai Desa Pacet',
+        tahun: '2021'
       }
     ]
   }
